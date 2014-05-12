@@ -50,7 +50,7 @@ void testProg()
 		// quick sort and printing quick sort
 		cout << "Testing quickSort..." << endl;
 		t1 = clock();
-		quickSort(array);
+		quickSort(array,n);
 		qSort = clock() - t1;
 		cout << "quickSort functional." << endl;
 		cout << endl;
