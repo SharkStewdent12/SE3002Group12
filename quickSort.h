@@ -1,1 +1,1 @@
-void quickSort(int tosort[]);
+void quickSort(int tosort[], int size);
