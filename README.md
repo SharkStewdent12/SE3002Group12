@@ -1,8 +1,8 @@
 #SE3002Group12
-_what it does_
+This program runs a benchmark to compare the efficiency of various sorting algorithms.
 
-_How to install_
+Navigate to the to directory where this program has been extracted, then run the following command:
+_Make_
+to run the program, enter
+_./testProg_
 
-_How to use_
-
-_Known issues_
