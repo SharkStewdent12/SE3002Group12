@@ -18,6 +18,7 @@ clock_t t1, t2, t3;
 clock_t qSort;
 clock_t hSort;
 clock_t bSort;
+int n;
 
 
 int main(int argc, char *args[])
@@ -29,7 +30,6 @@ int main(int argc, char *args[])
 
 void testProg()
 {
-	int n;
 	try
 	{
 		cout << "===================================== Test Prog =============================" << endl;
@@ -110,7 +110,7 @@ void testProg()
 void timing()
 {
 	cout << "-----------------------------Timing-------------------------------" << endl;
-	cout << "N = " << "" << endl;
+	cout << "N = " << n << endl;
 	cout << endl;
 	cout << "quickSort = " << (double)qSort/(double)(CLOCKS_PER_SEC/1000) << "ms" << endl;
 	cout << "heapSort = " << (double)hSort/(double)(CLOCKS_PER_SEC/1000) << "ms" << endl;
