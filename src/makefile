@@ -1,23 +1,32 @@
-IDIR=../include
+IDIR= ../include
 CC=g++
 CFLAGS=-I$(IDIR)
 
 ODIR=obj
-LDIR=
+#LDIR=
 
-LIBS =
+#LIBS =
 
-_DEPS = *.h
-DEPS = $(patsubst %, $(IDIR)/%,$(_DEPS))
+SRC = bubbleSort.cc  genArray.cc  heapSort.cc  permute.cc  printArray.cc  quickSort.cc  testProg.cc
+#$(SRC) = $(patsubst %, %,$(_SRC))
 
-_OBJ = *.cc
-OBJ = $(patsubst %, $(ODIR)/%,$(_OBJ))
+#_DEPS = *.h
+#DEPS = $(patsubst %, $(IDIR)/%,$(_DEPS))
+DEPS = $(SRC: .cc = .h)
 
-$(ODIR): %.o : %.cc $(DEPS)
+#_OBJ = *.o
+#OBJ = $(patsubst %, $(ODIR)/%,$(_OBJ))
+
+OBJ = $(SRC: .cc = .o)
+
+test:
+	$(info HAI!!! )
+
+$(ODIR)/%.o: %.cc $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 testProg: $(OBJ)
-	g++ -o $@ $^ $(CFLAGS) $(LIBS)
+	g++ -o $@ $^ $(CFLAGS) #$(LIBS)
 
 .PHONY: clean
 
