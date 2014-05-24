@@ -19,14 +19,12 @@ DEPS = $(SRC: .cc = .h)
 
 OBJ = $(SRC: .cc = .o)
 
-test:
-	$(info HAI!!! )
+testProg: $(OBJ)
+	g++ -o $@ $^ $(CFLAGS) #$(LIBS)
 
 $(ODIR)/%.o: %.cc $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-testProg: $(OBJ)
-	g++ -o $@ $^ $(CFLAGS) #$(LIBS)
 
 .PHONY: clean
 
